@@ -2,20 +2,28 @@
 
 Just for testing and PoC
 
-Create configmap
+You can run all manifest at once by
+
+```
+kubectl apply -f .
+```
+
+or following each step below.
+
+### 1. Create configmap
 
 ```
 kubectl apply -f 1-postgres-configmap.yaml
 ```
 
 
-Create Persistent Volume
+### 2. Create Persistent Volume
 
 ```
 kubectl apply -f 2-postgres-volume.yaml
 ```
 
-Create Persistent Volume Claim
+### 3. Create Persistent Volume Claim
 
 ```
 kubectl apply -f 3-postgres-pvc.yaml
@@ -27,21 +35,21 @@ Check persistent volume
 kubectl get pv,pvc
 ```
 
-Run deployment
+### 4. Run deployment
 
 ```
 kubectl apply -f 4-postgres-deployment.yaml
 ```
 
-Create service
+### 5. Create service
 
 ```
 kubectl apply -f 5-postgres-service.yaml
 ```
 
-Connect via pod
+### 6. Connect via pod
 
-get pod 
+Get running pod 
 
 ```
 kubectl get pod
